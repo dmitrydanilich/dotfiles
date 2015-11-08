@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/dandi/.oh-my-zsh
+export ZSH=/Users/danilichdim/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -78,6 +78,7 @@ source $HOME/.profile
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/dandi/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
@@ -92,9 +93,9 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
-. ~/.nvm/nvm.sh
-export MONGO_PATH="/usr/local/var/mongodb"
-export PATH="$PATH:$MONGO_PATH/bin"
+#. ~/.nvm/nvm.sh
+#export MONGO_PATH="/usr/local/var/mongodb"
+#export PATH="$PATH:$MONGO_PATH/bin"
 
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"

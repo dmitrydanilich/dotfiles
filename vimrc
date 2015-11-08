@@ -1,6 +1,4 @@
-let mapleader=","
 set nocompatible
-set noswapfile
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
@@ -71,6 +69,9 @@ let g:airline_powerline_fonts=1
 "let g:airline_enable_fugitive=1
 let g:airline#extensions#bufferline#enabled=1
 set laststatus=2
+
+set noswapfile
+let mapleader=","
 
 " session management
 let g:session_directory = "~/.vim/session"

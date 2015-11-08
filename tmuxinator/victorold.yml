@@ -1,0 +1,10 @@
+# ~/.tmuxinator/victor.yml
+
+name: victor
+root: ~/automated-testing
+
+windows:
+  - editor: 
+      panes:
+        - vim
+  - docker: 

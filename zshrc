@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/danilichdim/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/dandi/.rvm/gems/ruby-2.2.1/bin:/Users/dandi/.rvm/gems/ruby-2.2.1@global/bin:/Users/dandi/.rvm/rubies/ruby-2.2.1/bin:/Users/dandi/.rbenv/shims:/Users/dandi/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/dandi/.rvm/bin"
+export PATH="/Users/dandi/.rvm/gems/ruby-2.2.1/bin:/Users/dandi/.rvm/gems/ruby-2.2.1@global/bin:/Users/dandi/.rvm/rubies/ruby-2.2.1/bin:/Users/dandi/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/dandi/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -82,8 +82,6 @@ source $HOME/.profile
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/dandi/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 export EDITOR='vim'
 
 # git aliases
@@ -98,4 +96,3 @@ alias go='git checkout '
 #export PATH="$PATH:$MONGO_PATH/bin"
 
 export PATH="$HOME/.bin:$PATH"
-eval "$(rbenv init - --no-rehash zsh)"

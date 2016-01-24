@@ -65,8 +65,8 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " airline config
 let g:airline_theme='dark'
-let g:airline_powerline_fonts=1
-"let g:airline_enable_fugitive=1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 let g:airline#extensions#bufferline#enabled=1
 set laststatus=2
 

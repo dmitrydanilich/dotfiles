@@ -21,3 +21,20 @@ alias sssg='bundle exec cucumber -p specific-scenarios-grid env=staging-grid-doc
 alias ssdl='bundle exec cucumber -p specific-scenarios-local env=develop-grid-docker-local-chrome'
 alias sssl='bundle exec cucumber -p specific-scenarios-local env=staging-grid-docker-local-chrome'
 alias ssgdl='bundle exec cucumber -p specific-scenarios-grid env=develop-grid-docker-local-chrome'
+
+#SilverSearcher
+#precondition: brew install the_silver_searcher
+alias ss='ag -R'
+
+#TagsRenewal
+#precondition: brew install ctags
+alias tags='ctags -R .'
+
+#IncreaseUlimit
+#preconditions:
+# echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+# echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
+# sudo sysctl -w kern.maxfiles=65536
+# sudo sysctl -w kern.maxfilesperproc=65536
+# ulimit -n 65536 65536
+ulimit -n 65536 65536

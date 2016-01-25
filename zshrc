@@ -18,9 +18,21 @@ export EDITOR='vim'
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm"  ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # nvm alias default 0.10.36 - for setting default node version
 source ~/.nvm/nvm.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH="$HOME/.bin:$PATH"
+
+#IncreaseUlimit
+#preconditions:
+# echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
+# echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
+# sudo sysctl -w kern.maxfiles=65536
+# sudo sysctl -w kern.maxfilesperproc=65536
+# ulimit -n 65536 65536
+ulimit -n 65536 65536

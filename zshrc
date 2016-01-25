@@ -91,8 +91,10 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
-. ~/.nvm/nvm.sh
-#export MONGO_PATH="/usr/local/var/mongodb"
-#export PATH="$PATH:$MONGO_PATH/bin"
+
+# nvm alias default 0.10.36 - for setting default node version
+source ~/.nvm/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH="$HOME/.bin:$PATH"

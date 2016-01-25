@@ -1,8 +1,3 @@
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 #Git Aliases
 alias gs='git status '
 alias ga='git add '
@@ -29,12 +24,3 @@ alias ss='ag -R'
 #TagsRenewal
 #precondition: brew install ctags
 alias tags='ctags -R .'
-
-#IncreaseUlimit
-#preconditions:
-# echo kern.maxfiles=65536 | sudo tee -a /etc/sysctl.conf
-# echo kern.maxfilesperproc=65536 | sudo tee -a /etc/sysctl.conf
-# sudo sysctl -w kern.maxfiles=65536
-# sudo sysctl -w kern.maxfilesperproc=65536
-# ulimit -n 65536 65536
-ulimit -n 65536 65536

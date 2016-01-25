@@ -91,7 +91,7 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
-#. ~/.nvm/nvm.sh
+. ~/.nvm/nvm.sh
 #export MONGO_PATH="/usr/local/var/mongodb"
 #export PATH="$PATH:$MONGO_PATH/bin"
 

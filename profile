@@ -1,11 +1,16 @@
 #Git Aliases
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
 alias gc='git commit'
+alias gcm='git commit -m'
 alias gd='git diff'
-alias go='git checkout '
+alias go='git checkout'
+alias gm='git checkout master'
+alias gob='git checkout -b'
+alias gp='git push origin'
 alias hist='git log'
+alias pull='git pull'
 
 #Cucumber Aliases
 alias ap='bundle exec cucumber -p api-postdeployment env=develop-grid-docker-ec2-chrome'
@@ -23,4 +28,4 @@ alias ss='ag -R'
 
 #TagsRenewal
 #precondition: brew install ctags
-alias tags='ctags -R .'
+alias tags='ctags -R --exclude=.git --exclude=node_modules'

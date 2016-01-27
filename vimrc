@@ -45,6 +45,8 @@ Plugin 'mhinz/vim-startify'
 Plugin 'xolox/vim-session'
 " fugitive.vim: a Git wrapper so awesome, it should be illegal 
 Plugin 'tpope/vim-fugitive'
+" Vastly improved Javascript indentation and syntax support in Vim.
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 filetype plugin indent on
@@ -126,9 +128,6 @@ nnoremap ; :
  nnoremap <leader>V :so  ~/.vimrc<CR>
  "---------------------------------------------------------------
  "--------------------CUCUMBER-----------------------------------
- "Hitting <Control>+h will move the cursor to the beginning of the
- "text on that line and change the first word.
- map <silent> <C-h> ^cw
  "hitting D will duplicate whatever’s selected directly below.
  "This really comes in handy when you’re writing tests.
  vmap D y'>p
@@ -173,3 +172,4 @@ let @n = 'A @now'
 let @k = 'A @kuj'
 let @b = 'A @broken'
 let @t = 'a --tags @now'
+let @r = 'o JSON.parse(@response.body)'

@@ -11,8 +11,6 @@ Plugin 'xolox/vim-misc'
 Plugin 'bling/vim-airline'
 " Vundle, the plug-in manager for Vim
 Plugin 'VundleVim/Vundle.vim'
-" rails.vim: Ruby on Rails power tools
-Plugin 'tpope/vim-rails'
 " Vim/Ruby Configuration Files
 Plugin 'vim-ruby/vim-ruby'
 " surround.vim: quoting/parenthesizing made simple
@@ -37,8 +35,6 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 " Shows a git diff in the gutter (sign column)
 Plugin 'airblade/vim-gitgutter'
-" Source code browser
-Plugin 'taglist.vim'
 " A fancy start screen
 Plugin 'mhinz/vim-startify'
 " Extended session management for Vim (:mksession on steroids)
@@ -66,9 +62,9 @@ set wildmode=list:longest,list:full " Tab completion
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " airline config
-let g:airline_theme='dark'
-let g:airline_powerline_fonts=1
-"let g:airline_enable_fugitive=1
+let g:airline_theme='murmur'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 let g:airline#extensions#bufferline#enabled=1
 set laststatus=2
 

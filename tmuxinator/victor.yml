@@ -6,4 +6,4 @@ root: ~/routing-service/lib/automated-testing
 windows:
   - editor: vim
   - git: 
-  - mongodb: sudo mongod
+  - mongodb: mongod

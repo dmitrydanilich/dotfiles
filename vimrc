@@ -59,7 +59,25 @@ colorscheme molokai
 set autoindent " Auto indention should be on
 set nu "add line numbers
 set wildmode=list:longest,list:full " Tab completion
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+"dont continue comments when pushing o/O"
+set formatoptions-=o
+
+" Get rid of the toolbar
+set go-=T
+
+" Simplified git commands
+map gs :Gstatus<CR>
+map gc :Gcommit<CR>
+map gb :Gblame<CR>
+
+"indent settings
+filetype plugin indent on
+augroup myfiletypes
+  autocmd!
+  autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
+augroup END
 
 " airline config
 let g:airline_theme='murmur'
@@ -85,23 +103,10 @@ nnoremap <leader>sc :CloseSession<CR>
 nmap <leader>f <Plug>(easymotion-f2)
 nmap <leader>F <Plug>(easymotion-F2)
 
-" Ben Orenstein
- syntax on                 " Enable syntax highlighting
- filetype plugin indent on " Enable filetype-specific indenting 
-
- augroup myfiletypes
-   " Clear old autocmds in group
-   autocmd!
-   " autoindent with two spaces, always expand tabs
-   autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
- augroup END
-" ---------------------------------------------------------------
-" ---------------------vim-cucumber-indentation------------------
+" vim-cucumber-indentation
 filetype plugin indent on
 au FileType cucumber setl sw=2 sts=2 et
-" ---------------------------------------------------------------
-" ---------------------------------------------------------------
-" ----------------------MAPPINGS---------------------------------
+
 "Remap F5 to show/hide NERDTree file browser:
 nnoremap <F5> :NERDTreeToggle<CR>
 
@@ -113,20 +118,21 @@ inoremap jj <ESC>
 
 "Remap colon to semiсolon:
 nnoremap ; :
- "---------------------------------------------------------------
- "---------------------CTRLP-------------------------------------
- let g:ctrlp_map = "<c-p>"
- nnoremap <leader>t :CtrlPMRU<CR>
- nnoremap <leader>bp :CtrlPBuffer<CR>
- "---------------------------------------------------------------
- "---------------------OPEN VIMRC--------------------------------
- nnoremap <leader>v :e  ~/.vimrc<CR>
- nnoremap <leader>V :so  ~/.vimrc<CR>
- "---------------------------------------------------------------
- "--------------------CUCUMBER-----------------------------------
- "hitting D will duplicate whatever’s selected directly below.
- "This really comes in handy when you’re writing tests.
- vmap D y'>p
+
+" CtrlP
+let g:ctrlp_map = "<c-p>"
+nnoremap <leader>t :CtrlPMRU<CR>
+nnoremap <leader>bp :CtrlPBuffer<CR>
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|node_modules$'
+
+" Open .vimrc
+nnoremap <leader>v :e  ~/.vimrc<CR>
+nnoremap <leader>V :so  ~/.vimrc<CR>
+
+"--------------------CUCUMBER-----------------------------------
+"hitting D will duplicate whatever’s selected directly below.
+"This really comes in handy when you’re writing tests.
+vmap D y'>p
 
 " The Silver Searcher
 if executable('ag')

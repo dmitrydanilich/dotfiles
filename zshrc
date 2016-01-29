@@ -15,8 +15,6 @@ export DOCKER_CERT_PATH=/Users/dandi/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 export EDITOR='vim'
 
-eval "$(rbenv init - --no-rehash zsh)"
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 

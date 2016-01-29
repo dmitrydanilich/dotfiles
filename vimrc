@@ -3,45 +3,25 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-" --------------------------------------------------------------
-" -----------------------PLUGINS--------------------------------
-" Miscellaneous auto-load Vim scripts
+" Plugins
 Plugin 'xolox/vim-misc'
-" lean & mean status/tabline for vim that's light as air
 Plugin 'bling/vim-airline'
-" Vundle, the plug-in manager for Vim
 Plugin 'VundleVim/Vundle.vim'
-" Vim/Ruby Configuration Files
 Plugin 'vim-ruby/vim-ruby'
-" surround.vim: quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
-" Vim plugin, insert or delete brackets, parens, quotes in pair
 Plugin 'jiangmiao/auto-pairs'
-" Fuzzy file, buffer, mru, tag, etc finder(CTRL+P).
 Plugin 'kien/ctrlp.vim'
-" Vim motions on speed!
 Plugin 'Lokaltog/vim-easymotion'
-" A tree explorer plugin for vim.
 Plugin 'scrooloose/nerdtree.git'
-" Molokai color scheme for Vim
 Plugin 'tomasr/molokai'
-" one colorscheme pack to rule them all!
 Plugin 'flazz/vim-colorschemes'
-" repeat.vim: enable repeating supported plugin maps with "."
 Plugin 'tpope/vim-repeat'
-" to jump from steps to step definitions in feature files.
 Plugin 'tpope/vim-cucumber'
-" vim-endwise: wisely add 'end' in ruby after if, do, def, etc.
 Plugin 'tpope/vim-endwise'
-" Shows a git diff in the gutter (sign column)
 Plugin 'airblade/vim-gitgutter'
-" A fancy start screen
 Plugin 'mhinz/vim-startify'
-" Extended session management for Vim (:mksession on steroids)
 Plugin 'xolox/vim-session'
-" fugitive.vim: a Git wrapper so awesome, it should be illegal 
 Plugin 'tpope/vim-fugitive'
-" Vastly improved Javascript indentation and syntax support in Vim.
 Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
@@ -61,18 +41,12 @@ set nu "add line numbers
 set wildmode=list:longest,list:full " Tab completion
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
-"dont continue comments when pushing o/O"
-set formatoptions-=o
-
-" Get rid of the toolbar
-set go-=T
-
-" Simplified git commands
+" fugitive hotkeys
 map gs :Gstatus<CR>
 map gc :Gcommit<CR>
 map gb :Gblame<CR>
 
-"indent settings
+" indent settings
 filetype plugin indent on
 augroup myfiletypes
   autocmd!
@@ -107,16 +81,16 @@ nmap <leader>F <Plug>(easymotion-F2)
 filetype plugin indent on
 au FileType cucumber setl sw=2 sts=2 et
 
-"Remap F5 to show/hide NERDTree file browser:
+" Remap F5 to show/hide NERDTree file browser:
 nnoremap <F5> :NERDTreeToggle<CR>
 
-"Substitute all occurrences of the word under the cursor:
+" Substitute all occurrences of the word under the cursor:
 nnoremap <leader>s :%s/<C-r><C-w>/
 
-"Remapping ESC key to jj:
+" Remapping ESC key to jj:
 inoremap jj <ESC>
 
-"Remap colon to semiсolon:
+" Remap colon to semiсolon:
 nnoremap ; :
 
 " CtrlP
@@ -128,11 +102,6 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|node_modules$'
 " Open .vimrc
 nnoremap <leader>v :e  ~/.vimrc<CR>
 nnoremap <leader>V :so  ~/.vimrc<CR>
-
-"--------------------CUCUMBER-----------------------------------
-"hitting D will duplicate whatever’s selected directly below.
-"This really comes in handy when you’re writing tests.
-vmap D y'>p
 
 " The Silver Searcher
 if executable('ag')
@@ -162,14 +131,8 @@ augroup END
 
 " Use CtrlPTag to browser your tags
 nnoremap <leader>c :CtrlPTag<cr>
-"==================================================
-"
-map <Leader>bb :!bundle install<cr>
-map <Leader>cn :e ~/Dropbox/notes/coding-notes.txt<cr>
-map <Leader>dn :e ~/Dropbox/notes/design-notes.txt<cr>
-map <Leader>pn :sp ~/Dropbox/notes/project-notes.txt<cr>
-"
-"=============MACROS===============================
+
+" Macros
 let @n = 'A @now'
 let @k = 'A @kuj'
 let @b = 'A @broken'

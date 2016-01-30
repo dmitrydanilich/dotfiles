@@ -1,9 +1,11 @@
 # ~/.tmuxinator/victor.yml
 
-name: victor
+name: VICTOR
 root: ~/routing-service/lib/automated-testing
 
 windows:
-  - editor: vim
-  - git: 
-  - mongodb: mongod
+  - EDITOR:
+    - sleep 3
+    - vim
+  - TERMINAL: 
+  - MONGODB: mongod

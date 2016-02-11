@@ -15,9 +15,9 @@ alias pull='git pull'
 #Cucumber Aliases
 alias ap='bundle exec cucumber -p api-postdeployment env=develop-grid-docker-ec2-chrome'
 alias ai='bundle exec cucumber -p api-isolated env=api-isolated'
-alias ssdg='bundle exec cucumber -p specific-scenarios-grid env=develop-grid-docker-ec2-chrome'
+alias ssdg='bundle exec cucumber -p web-kuj-specific env=develop-grid-docker-ec2-chrome'
 alias wn='bundle exec cucumber -p web-nightly env=develop-grid-docker-ec2-chrome'
-alias ssdl='bundle exec cucumber -p specific-scenarios-local env=develop-grid-docker-local-chrome'
+alias ssdl='bundle exec cucumber -p web-kuj-specific env=develop-grid-docker-local-chrome'
 
 #Dotfile Editing
 alias dot='cd ~/dotfiles/'

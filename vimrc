@@ -5,6 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'xolox/vim-misc'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'xolox/vim-session'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
@@ -49,6 +51,28 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" CtrlP
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_map = "<c-p>"
+let g:ctrlp_custom_ignore = '\v[\/]\.git|node_modules|tags$'
+hi CtrlPMatch ctermfg=blue
+
+" General Config
+inoremap jj <ESC>
+nnoremap <F5> :NERDTreeToggle<CR>
+nnoremap ; :
+set noswapfile
+set autoindent " Auto indention should be on
+set wildmode=list:longest,list:full " Tab completion
+if exists("g:ctrl_user_command")
+    unlet g:ctrlp_user_command
+endif
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*,*/tags/*
+"set ttyfast " Send more characters for redraws
+set mouse=a "Enable mouse use in all modes
+set ttymouse=xterm2
 
 " Indentation
 augroup myfiletypes
@@ -106,19 +130,6 @@ let g:session_directory = "~/.vim/session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
-
-" General Config
-inoremap jj <ESC>
-nnoremap <F5> :NERDTreeToggle<CR>
-nnoremap ; :
-set noswapfile
-set autoindent " Auto indention should be on
-set wildmode=list:longest,list:full " Tab completion
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
-" CtrlP
-let g:ctrlp_map = "<c-p>"
-let g:ctrlp_custom_ignore = '\v[\/]\.git|node_modules$'
 
 " Auto-Reload
 augroup myvimrchooks

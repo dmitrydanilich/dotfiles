@@ -21,6 +21,7 @@ alias ssdl='bundle exec cucumber -p web-kuj-specific env=develop-grid-docker-loc
 
 #Dotfile Editing
 alias dot='cd ~/dotfiles/'
+alias aut='cd ~/routing-service/lib/automated-testing'
 alias op='vim ~/.profile'
 alias ot='vim ~/.tmux.conf'
 alias oz='vim ~/.zshrc'

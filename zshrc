@@ -1,3 +1,5 @@
+[[ -s "$HOME/.rvm/scripts/rvm"  ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # Path to your oh-my-zsh installation.
 ZSH=$HOME/.oh-my-zsh
 
@@ -19,7 +21,6 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm"  ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # nvm alias default 0.10.36 - for setting default node version
 source ~/.nvm/nvm.sh

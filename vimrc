@@ -13,7 +13,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'kien/ctrlp.vim'
@@ -21,26 +20,20 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-startify'
 Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'SirVer/ultisnips'
 call vundle#end()
 filetype plugin indent on
 
 " Colors
-set background=dark " ............enables dark color map for 'badwolf'
-colorscheme badwolf " ............vim colorscheme created by Steve Losh
+"set background=dark " ............enables dark color map for 'badwolf'
+colorscheme molokai " ............vim colorscheme created by Steve Losh
 syntax enable " ..................enable syntax processing
-
-" Spaces & Tabs
-set tabstop=4 " ..................number of visual spaces per TAB
-set softtabstop=4 " ..............number of spaces in tab when editing
-set expandtab " ..................tabs are spaces"
 
 " UI Config
 set number " .....................show line numbers
-set cursorline " .................highlight current line
-set wildmenu " ...................visual autocomplete for command menu
-set showmatch " ..................highlight matching [{()}]
 
 " Searching
 set incsearch " ..................search as characters are entered
@@ -77,7 +70,7 @@ set ttymouse=xterm2
 " Indentation
 augroup myfiletypes
   autocmd!
-  autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
+  autocmd FileType ruby,javascript,yaml,markdown set ai sw=2 sts=2 et
 augroup END
 
 " Movement
@@ -110,6 +103,7 @@ nnoremap <leader>c :CtrlPTag<cr>
 nnoremap <leader>bp :CtrlPBuffer<CR>
 nnoremap <leader>v :e  ~/.vimrc<CR>
 nnoremap <leader>V :so  ~/.vimrc<CR>
+nnoremap <leader>sn :UltiSnipsEdit<CR>
 nmap <leader>f <Plug>(easymotion-f2)
 nmap <leader>F <Plug>(easymotion-F2)
 
@@ -119,11 +113,26 @@ map gc :Gcommit<CR>
 map gb :Gblame<CR>
 
 " Airline
-let g:airline_theme='murmur'
+let g:airline_theme='durant'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#bufferline#enabled=1
 set laststatus=2 " always show status line
+
+" UltiSnips
+" make vim recognizing snippets dir
+set runtimepath+=~/.vim/my-snippets/
+" use different snippets dir
+let g:UltiSnipsSnippetsDir='~/.vim/my-snippets/'
+let g:UltiSnipsSnippetDirectories=["my-snippets"]
+" use vertical split to edit snippets
+let g:UltiSnipsEditSplit='vertical'
+" trigger snippet with Ctrl-l
+let g:UltiSnipsExpandTrigger='<tab>'
+" go to next snippet with Ctrl-j
+let g:UltiSnipsJumpForwardTrigger='<C-j>'
+" go to previous snippet with Ctrl-k
+let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 
 " Session Management
 let g:session_directory = "~/.vim/session"
